@@ -111,7 +111,7 @@ namespace IndianMovies.Migrations
                 table: "UpcomingMovies",
                 column: "Movie_objMovie_Id");
 
-            var sqlFile = Path.Combine(".\\DatabaseScript", @"data.sql");
+            var sqlFile = Path.Combine(".\\Script", @"SQLQuery1.sql");
             migrationBuilder.Sql(File.ReadAllText(sqlFile));
         }
 
