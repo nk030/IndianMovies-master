@@ -1,0 +1,54 @@
+﻿@page
+@model IndianMovies.Pages.Rank.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Ranking</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Ranking.Movie_Name" class="control-label"></label>
+                <input asp-for="Ranking.Movie_Name" class="form-control" />
+                <span asp-validation-for="Ranking.Movie_Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Ranking.India" class="control-label"></label>
+                <input asp-for="Ranking.India" class="form-control" />
+                <span asp-validation-for="Ranking.India" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Ranking.Canada" class="control-label"></label>
+                <input asp-for="Ranking.Canada" class="form-control" />
+                <span asp-validation-for="Ranking.Canada" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Ranking.Australia" class="control-label"></label>
+                <input asp-for="Ranking.Australia" class="form-control" />
+                <span asp-validation-for="Ranking.Australia" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Ranking.Movie_ID" class="control-label"></label>
+                <input asp-for="Ranking.Movie_ID" class="form-control" />
+                <span asp-validation-for="Ranking.Movie_ID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

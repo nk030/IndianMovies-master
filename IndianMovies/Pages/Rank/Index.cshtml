@@ -1,0 +1,60 @@
+﻿@page
+@model IndianMovies.Pages.Rank.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Ranking[0].Movie_Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ranking[0].India)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ranking[0].Canada)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ranking[0].Australia)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ranking[0].Movie_ID)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Ranking) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Movie_Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.India)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Canada)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Australia)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Movie_ID)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Ranking_Id">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.Ranking_Id">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Ranking_Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

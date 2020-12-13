@@ -1,0 +1,50 @@
+﻿@page
+@model IndianMovies.Pages.Upcoming.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>UpcomingMovies</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="UpcomingMovies.UpcomingMovies_Id" />
+            <div class="form-group">
+                <label asp-for="UpcomingMovies.Movie_Name" class="control-label"></label>
+                <input asp-for="UpcomingMovies.Movie_Name" class="form-control" />
+                <span asp-validation-for="UpcomingMovies.Movie_Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UpcomingMovies.Movie_Type" class="control-label"></label>
+                <input asp-for="UpcomingMovies.Movie_Type" class="form-control" />
+                <span asp-validation-for="UpcomingMovies.Movie_Type" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UpcomingMovies.Release_Date" class="control-label"></label>
+                <input asp-for="UpcomingMovies.Release_Date" class="form-control" />
+                <span asp-validation-for="UpcomingMovies.Release_Date" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UpcomingMovies.Movie_ID" class="control-label"></label>
+                <input asp-for="UpcomingMovies.Movie_ID" class="form-control" />
+                <span asp-validation-for="UpcomingMovies.Movie_ID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
